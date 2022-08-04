@@ -2,7 +2,7 @@ import React from "react"
 import TopBar from "./TopBar"
 import ContentRowTop from "./ContentRowTop"
 import Footer from "./Footer"
-import CardList from "./CardList"
+import Chart from "./Chart"
 
 
 function ContentWarapper () {
@@ -13,6 +13,7 @@ function ContentWarapper () {
         <div id="content">
         <TopBar />
         <ContentRowTop />
+        <Chart />
         <Footer />
         </div>
         </div>
