@@ -6,11 +6,11 @@ return(
     <React.Fragment>
 
         <tr>
-        <td>{props.Title}</td>
-        <td>{props.Length}</td>
-        <td>{props.Rating}</td>
-        <td>{props.Categories}</td>
-        <td>{props.Awards}</td>
+        <td>{props.title}</td>
+        <td>{props.length ? props.length : "-"}</td>
+        <td>{props.rating}</td>
+        <td>{props.genre ? props.genre.name : "-"}</td>
+        <td>{props.awards}</td>
         </tr>
 
 

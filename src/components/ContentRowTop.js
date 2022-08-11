@@ -1,7 +1,7 @@
 import React from "react"
 import CardList from "./CardList"
 import LastMovie from "./LastMovie"
-import Genres from "./Genres"
+import GenresInDb from "./GenresInDb"
 			
 function ContentRowTop (){
     
@@ -14,7 +14,7 @@ function ContentRowTop (){
 			        <CardList />
 					<div className="row">
 					<LastMovie />
-					<Genres />
+					<GenresInDb />
 					</div>
 			</div>
 

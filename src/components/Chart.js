@@ -1,26 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ChartRow from './ChartRow';
 
 
-let tableRowsData = [
-    {
-        Title: 'Billy Elliot ',
-        Length: '123',
-        Rating: '5',
-        Categories: ['Drama','Comedia'],
-        Awards: 2
-    },
-    {
-        Title: 'Alicia en el país de las maravillas',
-        Length: '142',
-        Rating: '4.8',
-        Categories: ['Drama','Acción','Comedia'],
-        Awards: 3
-    },
-    
-]
+class Chart extends Component{
+    constructor(){
+        super()
+        this.state = {
 
-function Chart (){
+            moviesList: null
+
+        }
+    }
+
+componentDidMount(){
+
+    fetch("http://localhost:3001/api/movies")
+    .then( res => res.json())
+    .then(movies => {
+
+        this.setState ({ moviesList: movies.data})
+
+    console.log("🚀 ~ file: Chart.js ~ line 19 ~ Chart ~ componentDidMount ~ data ", movies )
+
+   
+    })
+
+    .catch(error => console.log(error))
+
+}
+
+
+render(){
     return(
 
         <div className="card shadow mb-4">
@@ -38,15 +48,14 @@ function Chart (){
                         </thead>
                         <tbody>
 
-                    {
 
-                    tableRowsData.map ((row, i) =>{
+                    { this.state.moviesList ? this.state.moviesList.map ((row, i) =>
 
-                    return <ChartRow {...row} key={i}  />
-
-                    })
-
+                        <ChartRow {...row} key={i}  />) : <div> Loading... </div>
+                        
                     }
+
+                    
 
                         </tbody>
                     </table>
@@ -57,6 +66,7 @@ function Chart (){
 
 
     )
+}
 }
 
 export default Chart
