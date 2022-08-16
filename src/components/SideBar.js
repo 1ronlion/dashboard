@@ -7,6 +7,7 @@ import GenresInDb from "./GenresInDb"
 import CardList from "./CardList"
 import Chart from "./Chart"
 import NotFound from "./NotFound"
+import SearchMovies from "./SearchMovies"
 
 
 function SideBar () {
@@ -72,6 +73,7 @@ function SideBar () {
 			<Route  path="/genres-list"> <GenresInDb /> </Route>
 			<Route  path="/charts"> <CardList /> </Route>
 			<Route  path="/table"> <Chart /> </Route>
+			<Route  path="/search"> <SearchMovies /> </Route>
 			{/* <Route  path="categories/:id"> <CategoryDetail /></Route> */}
 			<Route path="*"> <NotFound /> </Route>
 
